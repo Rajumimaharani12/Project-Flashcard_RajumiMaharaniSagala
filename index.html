@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcard Verb</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Audio Elements -->
+<audio id="bgmHome" src="audio/bgm-home.mp3" loop></audio>
+<audio id="clickSound" src="audio/click.mp3"></audio>
+<audio id="celebrationSound" src="audio/celebration.mp3"></audio>
+
+<div id="app">
+
+<!-- ========== HOME SCREEN ========== -->
+<section id="home" class="screen active">
+  <h1 class="title">📘 FLASHCARD VERB</h1>
+  <p>Learn English Verb in a Fun & Easy Way 💖</p>
+  <button class="btn" onclick="goTo('level'); playClick();">Start Study</button>
+  <button class="btn" onclick="goTo('settings'); playClick();">Settings</button>
+</section>
+
+<!-- ========== CHOOSE PART ========== -->
+<section id="level" class="screen"> 
+  <h2 class="title">CHOOSE PART</h2>
+  <button class="level-btn" onclick="openIntro('part1'); playClick();">PART 1</button>
+  <button class="level-btn" onclick="openIntro('part2'); playClick();">PART 2</button>
+  <button class="level-btn" onclick="openIntro('part3'); playClick();">PART 3</button>
+  <button class="btn" onclick="goTo('home'); playClick();">Back</button>
+</section>
+
+<!-- ========== INTRO PART ========== -->
+<section id="intro" class="screen">
+  <h2 class="title" id="introTitle"></h2>
+  <p id="introDesc"></p>
+  <div class="row">
+    <button class="btn" onclick="goTo('level'); playClick();">Back</button>
+    <button class="btn" onclick="startFlashcard(); playClick();">Start</button>
+  </div>
+</section>
+
+<!-- ========== FLASHCARD ========== -->
+<section id="flashcard" class="screen">
+  <h2 class="title">FLASHCARD <span id="count"></span></h2>
+
+  <p id="lastStudiedText"></p>
+
+  <div class="card" onclick="showMeaning()">
+    <h3 id="word"></h3>
+    <p id="meaning">Click for meaning</p>
+  </div>
+
+  <button class="btn" id="listenBtn" onclick="playSound()">🔊 Listen</button>
+
+  <!-- Navigation Buttons -->
+  <div style="display:flex;justify-content:center;">   
+    <button class="btn" id="backBtn" onclick="backcard(); playClick();">
+      Back
+    </button>
+    <button class="btn" id="nextBtn" onclick="nextCard(); playClick();" style="display:none">
+      Next
+    </button>
+  </div>
+</section>
+
+<!-- ========== CONGRATULATIONS ========== -->
+<section id="congrats" class="screen">
+  <h2 class="title">🎉 HORE!</h2>
+  <p>You did a great job!<br>Keep learning and never give up 💪✨</p>
+  <button class="btn" onclick="goTo('reflection'); playClick();">Next</button>
+</section>
+
+<!-- ========== REFLECTION ========== -->
+<section id="reflection" class="screen">
+  <h2 class="title">REFLECTION</h2>
+
+  <div class="emoji-row">
+    <label class="emoji">
+      <input type="radio" name="mood"> <br> 😄
+    </label>
+    <label class="emoji">
+      <input type="radio" name="mood"><br> 😊
+    </label>
+    <label class="emoji">
+      <input type="radio" name="mood"> <br>😢
+    </label>
+  </div>
+
+  <button class="btn" onclick="goTo('home'); playClick();">Back to Home</button>
+</section>
+
+<!-- ========== SETTINGS ========== -->
+<section id="settings" class="screen">
+  <h2 class="title">SETTINGS</h2>
+
+  <label>
+    <input type="checkbox" id="audioToggle" checked onchange="toggleAudio()">
+    Audio Pronunciation
+  </label>
+
+  <br><br>
+
+  <label>
+    <input type="checkbox" id="bgmToggle" checked onchange="toggleBGM()">
+    Background Music
+  </label>
+
+  <br><br>
+
+  <button class="btn reset" onclick="resetProgress(); playClick();">Reset Learning Progress</button>
+  <button class="btn" onclick="goTo('home'); playClick();">Back</button>
+</section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

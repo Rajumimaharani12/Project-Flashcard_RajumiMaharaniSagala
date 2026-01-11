@@ -1,0 +1,201 @@
+body{
+margin:0;
+font-family:'Fredoka',sans-serif;
+background:linear-gradient(#6dd5fa,#ffffff);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+body{
+  transition: background 0.4s ease;
+}
+
+.bg-home{
+  background:#AEE3F5;
+}
+
+.bg-easy{ 
+    background-image: url('./backgroundfoto/background1.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bg-medium{ 
+    background: url('./backgroundfoto/background2.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bg-hard{ 
+    background: url('./backgroundfoto/background3.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+#app{
+width:90%;
+max-width:400px;
+background:white;
+padding:25px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.screen{display:none;}
+.active{display:block;}
+
+.title{
+font-weight:700;
+color:#38bdf8;
+}
+
+.btn{
+width:60%;
+padding:12px;
+margin:10px;
+border:none;
+border-radius:20px;
+background:#bae6fd;
+color:red;
+font-size:16px;
+cursor:pointer;
+}
+
+.level-btn{
+width:80%;
+padding:20px;
+margin:10px;
+border:none;
+border-radius:20px;
+background:#7dd3fc;
+font-size:18px;
+color:white;
+}
+
+/*  untuk tombol biasa */
+.btn:hover {
+  background: #0ba4ac;
+  color: white;
+  transition: 0.3s;
+}
+
+/* untuk tombol level (Easy, Medium, Hard) */
+.level-btn:hover {
+  background: #0ba4ac;
+  color: white;
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+
+.card{
+background:#e0f2fe;
+padding:40px;
+border-radius:20px;
+margin:20px 0;
+cursor:pointer;
+}
+
+.row{
+display:flex;
+justify-content:space-around;
+}
+
+.reset{
+background:#fecaca;
+color:#b91c1c;
+}
+
+.emoji-row{
+display:flex;
+justify-content:space-around;
+margin:20px 0;
+}
+
+.emoji{
+font-size:32px;
+cursor:pointer;
+}
+
+.emoji input{
+margin-right:6px;
+}
+
+.bg-easy{ 
+    background-image: url('./backgroundfoto/background1.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bg-medium{ 
+    background: url('./backgroundfoto/background2.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bg-hard{ 
+    background: url('./backgroundfoto/background3.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* UNTUK PENYESUAIAN TAMPILAN 
+    Tablet & Mobile */
+@media (max-width: 768px) {
+  #app {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .level-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  .card {
+    padding: 28px;
+    margin: 16px 0;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* Mobile kecil */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  #app {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .emoji {
+    font-size: 26px;
+  }
+}
